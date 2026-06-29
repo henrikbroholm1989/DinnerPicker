@@ -1,0 +1,73 @@
+body {
+
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+
+    background: #f5f5f5;
+}
+
+header {
+
+    background: #3b82f6;
+
+    color: white;
+
+    padding: 1rem;
+
+    text-align: center;
+}
+
+main {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 1rem;
+}
+
+section {
+
+    background: white;
+
+    margin-bottom: 1rem;
+
+    padding: 1rem;
+
+    border-radius: 8px;
+}
+
+#tagContainer {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: .5rem;
+}
+
+.tag {
+
+    background: #eeeeee;
+
+    padding: .4rem .8rem;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+button {
+
+    font-size: 1rem;
+
+    padding: .75rem 1.5rem;
+
+    cursor: pointer;
+}
+
+ul {
+
+    padding-left: 20px;
+}

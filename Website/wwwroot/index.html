@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hvad skal vi have til aftensmad?</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script type="module" src="js/app.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>🍽 Hvad skal vi have til aftensmad?</h1>
+</header>
+
+<main>
+
+    <section id="randomSection">
+        <button id="randomButton">
+            🎲 Vælg tilfældig ret
+        </button>
+
+        <h2 id="randomRecipe"></h2>
+    </section>
+
+    <section id="filterSection">
+
+        <div class="filterMode">
+
+            <label>
+                <input
+                    type="radio"
+                    name="mode"
+                    value="any"
+                    checked>
+
+                Matcher mindst ét tag
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="mode"
+                    value="all">
+
+                Matcher alle tags
+            </label>
+
+        </div>
+
+        <h2>Tags</h2>
+
+        <div id="tagContainer"></div>
+
+    </section>
+
+    <section>
+
+        <h2>
+            Retter
+            (<span id="recipeCount">0</span>)
+        </h2>
+
+        <ul id="recipeList"></ul>
+
+    </section>
+
+</main>
+
+</body>
+</html>
