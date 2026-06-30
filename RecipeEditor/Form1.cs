@@ -104,6 +104,7 @@ public partial class Form1 : Form
 
         // select newly added
         lstRecipes.SelectedItem = newRecipe.Name;
+        txtName.Focus();
     }
     private void btnDelete_Click(object sender, EventArgs e)
     {

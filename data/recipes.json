@@ -1,9 +1,8 @@
 {
-  "version": 8,
+  "version": 96,
   "tags": {
     "quick": "Hurtig",
     "cheap": "Billig",
-    "italian": "Italiensk",
     "pasta": "Pasta",
     "chicken": "Kylling",
     "vegetarian": "Vegetar",
@@ -12,20 +11,30 @@
     "beef": "Oksek\u00F8d",
     "noodle": "Nudler",
     "pork": "Gris",
-    "bread": "Br\u00F8d"
+    "bread": "Br\u00F8d",
+    "duck": "And",
+    "potatoes": "Kartofler",
+    "rice": "Ris",
+    "pommes": "Pommes Frites",
+    "lamb": "Lam",
+    "fish": "Fisk",
+    "shellfish": "Skalddyr",
+    "soup": "Suppe",
+    "bbq": "Grill"
   },
   "recipes": [
     {
       "name": "Spaghetti Carbonara",
       "tags": [
-        "italian",
-        "pasta",
-        "quick"
+        "pork",
+        "quick",
+        "pasta"
       ]
     },
     {
       "name": "Butter Chicken",
       "tags": [
+        "bread",
         "chicken",
         "spicy"
       ]
@@ -33,6 +42,8 @@
     {
       "name": "Nachos",
       "tags": [
+        "you-and-me",
+        "quick",
         "chicken"
       ]
     },
@@ -41,7 +52,6 @@
       "tags": [
         "cheap",
         "quick",
-        "italian",
         "pasta",
         "vegetarian"
       ]
@@ -50,19 +60,235 @@
       "name": "Pitabr\u00F8d",
       "tags": [
         "cheap",
-        "italian"
+        "bread",
+        "pork",
+        "chicken",
+        "vegetarian"
       ]
     },
     {
       "name": "Panini",
       "tags": [
+        "bread",
         "quick"
       ]
     },
     {
       "name": "Nudelret",
       "tags": [
+        "chicken",
         "noodle"
+      ]
+    },
+    {
+      "name": "And med tilbeh\u00F8r",
+      "tags": [
+        "duck",
+        "potatoes",
+        "pasta"
+      ]
+    },
+    {
+      "name": "Fl\u00E6skesteg",
+      "tags": [
+        "pork",
+        "potatoes"
+      ]
+    },
+    {
+      "name": "Hamburgerryg",
+      "tags": [
+        "pork",
+        "potatoes"
+      ]
+    },
+    {
+      "name": "K\u00F8dboller",
+      "tags": [
+        "pork",
+        "rice"
+      ]
+    },
+    {
+      "name": "Svinem\u00F8rbrad",
+      "tags": [
+        "pork",
+        "pasta",
+        "rice"
+      ]
+    },
+    {
+      "name": "Spareribs",
+      "tags": [
+        "pork",
+        "pommes"
+      ]
+    },
+    {
+      "name": "Kotelet",
+      "tags": [
+        "pork",
+        "pasta",
+        "rice"
+      ]
+    },
+    {
+      "name": "Kylling i fad",
+      "tags": [
+        "chicken",
+        "pasta"
+      ]
+    },
+    {
+      "name": "Medisterp\u00F8lse",
+      "tags": [
+        "pork",
+        "potatoes",
+        "rice"
+      ]
+    },
+    {
+      "name": "Filet Royal",
+      "tags": [
+        "you-and-me",
+        "pork",
+        "pommes"
+      ]
+    },
+    {
+      "name": "Hotdog",
+      "tags": [
+        "bread",
+        "pork"
+      ]
+    },
+    {
+      "name": "Burger",
+      "tags": [
+        "bread",
+        "pork",
+        "beef"
+      ]
+    },
+    {
+      "name": "Skinkesnitzler",
+      "tags": [
+        "pork",
+        "pommes"
+      ]
+    },
+    {
+      "name": "B\u00F8f",
+      "tags": [
+        "bbq",
+        "beef",
+        "pommes"
+      ]
+    },
+    {
+      "name": "Oksesteg",
+      "tags": [
+        "beef",
+        "pommes"
+      ]
+    },
+    {
+      "name": "Lasagne",
+      "tags": [
+        "quick",
+        "beef",
+        "pasta"
+      ]
+    },
+    {
+      "name": "Kyllingebryst",
+      "tags": [
+        "bbq",
+        "chicken",
+        "pommes"
+      ]
+    },
+    {
+      "name": "Hel kylling",
+      "tags": [
+        "bbq",
+        "potatoes",
+        "chicken",
+        "pommes"
+      ]
+    },
+    {
+      "name": "Tarteletter",
+      "tags": [
+        "bread",
+        "chicken"
+      ]
+    },
+    {
+      "name": "Lammek\u00F8lle",
+      "tags": [
+        "potatoes",
+        "lamb"
+      ]
+    },
+    {
+      "name": "Tunmousse og rejer",
+      "tags": [
+        "bread",
+        "fish",
+        "shellfish"
+      ]
+    },
+    {
+      "name": "Indbagt fisk",
+      "tags": [
+        "fish",
+        "rice"
+      ]
+    },
+    {
+      "name": "H\u00F8nsek\u00F8dssuppe",
+      "tags": [
+        "bread",
+        "pork",
+        "soup"
+      ]
+    },
+    {
+      "name": "Tomatsuppe",
+      "tags": [
+        "bread",
+        "soup",
+        "vegetarian"
+      ]
+    },
+    {
+      "name": "P\u00F8lsehorn",
+      "tags": [
+        "bread",
+        "pork"
+      ]
+    },
+    {
+      "name": "Pizza",
+      "tags": [
+        "bread",
+        "bbq",
+        "pork"
+      ]
+    },
+    {
+      "name": "Toast",
+      "tags": [
+        "bread",
+        "quick"
+      ]
+    },
+    {
+      "name": "Mexikansk",
+      "tags": [
+        "you-and-me",
+        "beef"
       ]
     }
   ]
