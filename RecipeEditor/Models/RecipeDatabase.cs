@@ -8,6 +8,7 @@ namespace RecipeEditor.Models
 {
     public class RecipeDatabase
     {
+        public int Version { get; set; } = 1;
         public Dictionary<string, string> Tags { get; set; } = new();
         public List<Recipe> Recipes { get; set; } = new();
     }

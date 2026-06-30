@@ -34,6 +34,8 @@ public class JsonService
 
     public void Save(RecipeDatabase data)
     {
+        data.Version++;
+
         var options = new JsonSerializerOptions
         {
             WriteIndented = true,

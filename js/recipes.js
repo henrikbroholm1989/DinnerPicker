@@ -10,7 +10,19 @@ export async function loadRecipes() {
 
     validateData(data);
 
-    return data;
+    const response = await fetch(
+        `./data/recipes.json?v=${data.version}`
+    );
+
+    if (!response.ok) {
+        throw new Error("Kunne ikke indlæse recipes.json (versioned)");
+    }
+
+    const finalData = await response.json();
+
+    validateData(finalData);
+
+    return finalData;
 }
 
 function validateData(data) {
