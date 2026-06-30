@@ -14,6 +14,7 @@ public class JsonService
 
     public RecipeDatabase Load()
     {
+
         if (!File.Exists(_path))
             throw new FileNotFoundException("Fandt ikke recipes.json", _path);
 
@@ -21,6 +22,8 @@ public class JsonService
 
         var options = new JsonSerializerOptions
         {
+            WriteIndented = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             PropertyNameCaseInsensitive = true
         };
 
