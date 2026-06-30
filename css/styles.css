@@ -210,15 +210,6 @@ h2 {
     color: var(--text);
 }
 
-.empty-state {
-
-    text-align: center;
-
-    color: var(--muted);
-
-    padding: 2rem 1rem;
-}
-
 button {
 
     font: inherit;
@@ -287,4 +278,82 @@ button {
 
         position: static;
     }
+}
+
+.secondary-btn {
+
+    margin-top: 1rem;
+
+    padding: .6rem 1rem;
+
+    border-radius: 999px;
+
+    border: 2px solid var(--primary);
+
+    background: white;
+
+    color: var(--primary);
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.secondary-btn:hover {
+
+    background: var(--primary);
+
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.tag-chip {
+
+    transition: .15s ease;
+}
+
+.tag-chip:active {
+    transform: scale(0.97);
+}
+
+.recipe-card {
+
+    animation: fadeIn .2s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-info p {
+    margin: .25rem 0;
+}
+
+.result-info {
+    font-weight: 500;
+}
+
+.empty-state {
+
+    text-align: center;
+
+    color: var(--muted);
+
+    padding: 2rem 1rem;
+}
+
+.empty-state h3 {
+    margin-bottom: .5rem;
 }

@@ -27,7 +27,19 @@ export function renderRecipes(container, recipes, tags) {
     container.replaceChildren();
 
     if (recipes.length === 0) {
-        renderEmptyState(container);
+        container.innerHTML = "";
+
+const empty = document.createElement("div");
+empty.className = "empty-state";
+
+empty.innerHTML = `
+    <h3>Ingen retter matcher</h3>
+    <p>Prøv at fjerne et eller flere tags.</p>
+`;
+
+container.appendChild(empty);
+
+return;
         return;
     }
 
