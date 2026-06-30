@@ -6,7 +6,9 @@
     "pasta": "Pasta",
     "chicken": "Kylling",
     "vegetarian": "Vegetar",
-    "spicy": "St\u00E6rk"
+    "spicy": "St\u00E6rk",
+    "you-and-me": "Dig-og-mig",
+    "beef": "Oksek\u00F8d"
   },
   "Recipes": [
     {
@@ -25,10 +27,19 @@
       ]
     },
     {
-      "Name": "Gr\u00F8ntsagslasagne... ad",
+      "Name": "Nachos",
       "Tags": [
-        "vegetarian",
-        "italian"
+        "chicken"
+      ]
+    },
+    {
+      "Name": "Spaghetti m. tomatsovs",
+      "Tags": [
+        "cheap",
+        "quick",
+        "italian",
+        "pasta",
+        "vegetarian"
       ]
     }
   ]

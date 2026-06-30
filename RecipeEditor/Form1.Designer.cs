@@ -14,10 +14,9 @@ namespace RecipeEditor
         private Label lblName;
         private TextBox txtName;
 
-        private Label lblTags;
-        private TextBox txtTags;
-
         private Button btnSave;
+        private Button btnAdd;
+        private Button btnDelete;
 
         protected override void Dispose(bool disposing)
         {
@@ -34,104 +33,121 @@ namespace RecipeEditor
         {
             lstRecipes = new ListBox();
             btnReload = new Button();
-
             lblName = new Label();
             txtName = new TextBox();
-
-            lblTags = new Label();
-            txtTags = new TextBox();
-
+            btnSave = new Button();
+            btnAdd = new Button();
+            btnDelete = new Button();
+            clbTags = new CheckedListBox();
+            btnManageTags = new Button();
             SuspendLayout();
-
             // 
             // lstRecipes
             // 
             lstRecipes.FormattingEnabled = true;
-            lstRecipes.ItemHeight = 20;
             lstRecipes.Location = new Point(12, 12);
             lstRecipes.Name = "lstRecipes";
-            lstRecipes.Size = new Size(300, 380);
+            lstRecipes.Size = new Size(300, 364);
             lstRecipes.TabIndex = 0;
-
             // 
             // btnReload
             // 
-            btnReload.Location = new Point(330, 12);
+            btnReload.Location = new Point(318, 382);
             btnReload.Name = "btnReload";
-            btnReload.Size = new Size(120, 30);
+            btnReload.Size = new Size(154, 30);
             btnReload.TabIndex = 1;
-            btnReload.Text = "Reload";
+            btnReload.Text = "Reload List";
             btnReload.UseVisualStyleBackColor = true;
             btnReload.Click += btnReload_Click;
-
+            // 
+            // lblName
+            // 
+            lblName.AutoSize = true;
+            lblName.Location = new Point(318, 9);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(43, 20);
+            lblName.TabIndex = 4;
+            lblName.Text = "Navn";
+            // 
+            // txtName
+            // 
+            txtName.Location = new Point(318, 29);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(312, 27);
+            txtName.TabIndex = 5;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(478, 382);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(152, 30);
+            btnSave.TabIndex = 8;
+            btnSave.Text = "Save";
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(12, 382);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(147, 30);
+            btnAdd.TabIndex = 2;
+            btnAdd.Text = "Add recipe";
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(165, 382);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(147, 30);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "Delete";
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // clbTags
+            // 
+            clbTags.CheckOnClick = true;
+            clbTags.ColumnWidth = 150;
+            clbTags.FormattingEnabled = true;
+            clbTags.Location = new Point(318, 73);
+            clbTags.MultiColumn = true;
+            clbTags.Name = "clbTags";
+            clbTags.Size = new Size(312, 268);
+            clbTags.TabIndex = 9;
+            // 
+            // btnManageTags
+            // 
+            btnManageTags.Location = new Point(478, 347);
+            btnManageTags.Name = "btnManageTags";
+            btnManageTags.Size = new Size(152, 29);
+            btnManageTags.TabIndex = 10;
+            btnManageTags.Text = "Tilføj tags";
+            btnManageTags.UseVisualStyleBackColor = true;
+            btnManageTags.Click += btnManageTags_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(645, 425);
+            Controls.Add(btnManageTags);
+            Controls.Add(clbTags);
+            Controls.Add(btnAdd);
+            Controls.Add(btnDelete);
             Controls.Add(lstRecipes);
             Controls.Add(btnReload);
+            Controls.Add(lblName);
+            Controls.Add(txtName);
+            Controls.Add(btnSave);
             Name = "Form1";
             Text = "Recipe Editor";
             Load += Form1_Load;
-
-            // 
-            // lblName
-            // 
-            lblName = new Label();
-            lblName.Text = "Navn";
-            lblName.Location = new Point(330, 60);
-            lblName.AutoSize = true;
-
-            // 
-            // txtName
-            // 
-            txtName = new TextBox();
-            txtName.Location = new Point(330, 80);
-            txtName.Size = new Size(300, 25);
-
-            // 
-            // lblTags
-            // 
-            lblTags = new Label();
-            lblTags.Text = "Tags (kommasepareret)";
-            lblTags.Location = new Point(330, 120);
-            lblTags.AutoSize = true;
-
-            // 
-            // txtTags
-            // 
-            txtTags = new TextBox();
-            txtTags.Location = new Point(330, 140);
-            txtTags.Size = new Size(300, 25);
-
-            btnSave = new Button();
-
-            btnSave.Location = new Point(330, 180);
-            btnSave.Size = new Size(120, 30);
-            btnSave.Text = "Save";
-            btnSave.Click += btnSave_Click;
-
-            // IMPORTANT: add AFTER creation
-            Controls.Add(lstRecipes);
-            Controls.Add(btnReload);
-
-            Controls.Add(lblName);
-            Controls.Add(txtName);
-            Controls.Add(lblTags);
-            Controls.Add(txtTags);
-
-            Controls.Add(btnSave);
-
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Text = "Recipe Editor";
-
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private CheckedListBox clbTags;
+        private Button btnManageTags;
     }
 }

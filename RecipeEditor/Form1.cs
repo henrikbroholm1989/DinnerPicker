@@ -1,5 +1,6 @@
 using RecipeEditor.Models;
 using RecipeEditor.Services;
+using static System.Windows.Forms.AxHost;
 
 namespace RecipeEditor;
 
@@ -18,6 +19,7 @@ public partial class Form1 : Form
         _json = new JsonService(path);
 
         LoadData();
+        PopulateTagList();
     }
 
     private void LoadData()
@@ -39,11 +41,13 @@ public partial class Form1 : Form
             if (index >= 0)
                 lstRecipes.SelectedIndex = index;
         }
+        UpdateTagChecks();
     }
 
     private void btnReload_Click(object sender, EventArgs e)
     {
         LoadData();
+        PopulateTagList();
     }
 
     private void Form1_Load(object sender, EventArgs e)
@@ -63,7 +67,7 @@ public partial class Form1 : Form
             return;
 
         txtName.Text = _selectedRecipe.Name;
-        txtTags.Text = string.Join(", ", _selectedRecipe.Tags);
+        UpdateTagChecks();
     }
     private void btnSave_Click(object sender, EventArgs e)
     {
@@ -73,15 +77,106 @@ public partial class Form1 : Form
         // 1. Opdatér model fra UI
         _selectedRecipe.Name = txtName.Text;
 
-        _selectedRecipe.Tags = txtTags.Text
-            .Split(',', StringSplitOptions.RemoveEmptyEntries)
-            .Select(t => t.Trim())
-            .ToList();
+        _selectedRecipe.Tags = clbTags.CheckedItems
+    .Cast<TagItem>()
+    .Select(t => t.Id)
+    .ToList();
 
         // 2. Gem hele databasen
         _json.Save(_db);
 
         // 3. Opdater listvisning
         LoadData();
+    }
+    private void btnAdd_Click(object sender, EventArgs e)
+    {
+        var newRecipe = new Recipe
+        {
+            Name = "New recipe",
+            Tags = new List<string>()
+        };
+
+        _db.Recipes.Add(newRecipe);
+
+        _json.Save(_db);
+
+        LoadData();
+
+        // select newly added
+        lstRecipes.SelectedItem = newRecipe.Name;
+    }
+    private void btnDelete_Click(object sender, EventArgs e)
+    {
+        if (_selectedRecipe == null)
+            return;
+
+        var result = MessageBox.Show(
+            $"Delete '{_selectedRecipe.Name}'?",
+            "Confirm delete",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning);
+
+        if (result != DialogResult.Yes)
+            return;
+
+        _db.Recipes.Remove(_selectedRecipe);
+        _selectedRecipe = null;
+
+        txtName.Text = "";
+
+        _json.Save(_db);
+
+        LoadData();
+    }
+    private void PopulateTagList()
+    {
+        clbTags.Items.Clear();
+
+        foreach (var tag in _db.Tags.OrderBy(t => t.Value))
+        {
+            clbTags.Items.Add(new TagItem
+            {
+                Id = tag.Key,
+                Name = tag.Value
+            });
+        }
+    }
+    private void UpdateTagChecks()
+    {
+        if (_selectedRecipe == null)
+            return;
+
+        // Nulstil alle markeringer
+        for (int i = 0; i < clbTags.Items.Count; i++)
+        {
+            clbTags.SetItemChecked(i, false);
+        }
+
+        for (int i = 0; i < clbTags.Items.Count; i++)
+        {
+            var tag = (TagItem)clbTags.Items[i];
+
+            System.Diagnostics.Debug.WriteLine(
+                $"Tag: {tag.Id}, Recipe has: {string.Join(", ", _selectedRecipe!.Tags)}");
+
+            clbTags.SetItemChecked(
+                i,
+                _selectedRecipe!.Tags.Contains(tag.Id));
+        }
+    }
+
+    private void btnManageTags_Click(object sender, EventArgs e)
+    {
+        using var form = new TagManagerForm(_db);
+
+        if (form.ShowDialog() == DialogResult.OK)
+        {
+            _json.Save(_db);
+
+            PopulateTagList();
+
+            if (_selectedRecipe != null)
+                UpdateTagChecks();
+        }
     }
 }
