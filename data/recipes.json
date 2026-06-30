@@ -1,5 +1,5 @@
 {
-  "Tags": {
+  "tags": {
     "quick": "Hurtig",
     "cheap": "Billig",
     "italian": "Italiensk",
@@ -10,31 +10,31 @@
     "you-and-me": "Dig-og-mig",
     "beef": "Oksek\u00F8d"
   },
-  "Recipes": [
+  "recipes": [
     {
-      "Name": "Spaghetti Carbonara",
-      "Tags": [
+      "name": "Spaghetti Carbonara",
+      "tags": [
         "italian",
         "pasta",
         "quick"
       ]
     },
     {
-      "Name": "Butter Chicken",
-      "Tags": [
+      "name": "Butter Chicken",
+      "tags": [
         "chicken",
         "spicy"
       ]
     },
     {
-      "Name": "Nachos",
-      "Tags": [
+      "name": "Nachos",
+      "tags": [
         "chicken"
       ]
     },
     {
-      "Name": "Spaghetti m. tomatsovs",
-      "Tags": [
+      "name": "Spaghetti m. tomatsovs",
+      "tags": [
         "cheap",
         "quick",
         "italian",
@@ -43,10 +43,16 @@
       ]
     },
     {
-      "Name": "Pitabr\u00F8d",
-      "Tags": [
+      "name": "Pitabr\u00F8d",
+      "tags": [
         "cheap",
         "italian"
+      ]
+    },
+    {
+      "name": "Panini",
+      "tags": [
+        "quick"
       ]
     }
   ]

@@ -34,10 +34,14 @@ public class JsonService
 
     public void Save(RecipeDatabase data)
     {
-        var json = JsonSerializer.Serialize(data, new JsonSerializerOptions
+        var options = new JsonSerializerOptions
         {
-            WriteIndented = true
-        });
+            WriteIndented = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            PropertyNameCaseInsensitive = true
+        };
+
+        var json = JsonSerializer.Serialize(data, options);
 
         File.WriteAllText(_path, json);
     }
