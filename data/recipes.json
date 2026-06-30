@@ -1,13 +1,12 @@
 {
-  "version": 134,
+  "version": 170,
   "tags": {
-    "quick": "Hurtig",
+    "quick": "Nem",
     "cheap": "Billig",
     "pasta": "Pasta",
     "chicken": "Kylling",
     "vegetarian": "Vegetar",
-    "spicy": "St\u00E6rk",
-    "you-and-me": "Dig-og-mig",
+    "you-and-me": "Hygge",
     "beef": "Oksek\u00F8d",
     "noodle": "Nudler",
     "pork": "Gris",
@@ -41,15 +40,16 @@
       "tags": [
         "bread",
         "chicken",
-        "spicy"
+        "rice",
+        "slow"
       ]
     },
     {
       "name": "Nachos",
       "tags": [
         "you-and-me",
-        "quick",
-        "chicken"
+        "chicken",
+        "quick"
       ]
     },
     {
@@ -81,36 +81,49 @@
     {
       "name": "Nudelret",
       "tags": [
+        "you-and-me",
         "chicken",
-        "noodle"
+        "noodle",
+        "summer"
       ]
     },
     {
       "name": "And med tilbeh\u00F8r",
       "tags": [
         "duck",
+        "bbq",
+        "potatosalat",
         "potatoes",
-        "pasta"
+        "noodle",
+        "pastasalat"
       ]
     },
     {
       "name": "Fl\u00E6skesteg",
       "tags": [
+        "cheap",
+        "bbq",
         "pork",
+        "potatosalat",
         "potatoes"
       ]
     },
     {
       "name": "Hamburgerryg",
       "tags": [
+        "cheap",
         "pork",
-        "potatoes"
+        "potatoes",
+        "quick",
+        "winter"
       ]
     },
     {
       "name": "K\u00F8dboller",
       "tags": [
+        "cheap",
         "pork",
+        "quick",
         "rice"
       ]
     },
@@ -132,7 +145,10 @@
     {
       "name": "Kotelet",
       "tags": [
+        "cheap",
         "pork",
+        "potatoes",
+        "quick",
         "pasta",
         "rice"
       ]
@@ -140,15 +156,19 @@
     {
       "name": "Kylling i fad",
       "tags": [
+        "cheap",
         "chicken",
+        "quick",
         "pasta"
       ]
     },
     {
       "name": "Medisterp\u00F8lse",
       "tags": [
+        "cheap",
         "pork",
         "potatoes",
+        "quick",
         "rice"
       ]
     },
@@ -157,21 +177,26 @@
       "tags": [
         "you-and-me",
         "pork",
-        "pommes"
+        "quick",
+        "pommes",
+        "summer"
       ]
     },
     {
       "name": "Hotdog (almindelig)",
       "tags": [
+        "cheap",
         "bread",
-        "pork"
+        "bbq",
+        "pork",
+        "quick",
+        "summer"
       ]
     },
     {
       "name": "Burger (almindelig)",
       "tags": [
         "bread",
-        "pork",
         "beef"
       ]
     },
@@ -202,23 +227,34 @@
       "tags": [
         "quick",
         "beef",
-        "pasta"
+        "pasta",
+        "winter"
       ]
     },
     {
       "name": "Kyllingebryst",
       "tags": [
+        "cheap",
         "bbq",
+        "potatosalat",
+        "potatoes",
         "chicken",
+        "quick",
+        "noodle",
+        "pasta",
+        "pastasalat",
         "pommes"
       ]
     },
     {
       "name": "Hel kylling",
       "tags": [
+        "cheap",
         "bbq",
-        "potatoes",
+        "potatosalat",
         "chicken",
+        "quick",
+        "pastasalat",
         "pommes"
       ]
     },
@@ -232,8 +268,11 @@
     {
       "name": "Lammek\u00F8lle",
       "tags": [
+        "potatosalat",
         "potatoes",
-        "lamb"
+        "lamb",
+        "quick",
+        "summer"
       ]
     },
     {
@@ -247,16 +286,20 @@
     {
       "name": "Indbagt fisk",
       "tags": [
+        "cheap",
         "fish",
+        "quick",
         "rice"
       ]
     },
     {
       "name": "H\u00F8nsek\u00F8dssuppe",
       "tags": [
+        "cheap",
         "bread",
-        "pork",
-        "soup"
+        "quick",
+        "soup",
+        "winter"
       ]
     },
     {
@@ -318,7 +361,8 @@
         "pork",
         "potatoes",
         "chicken",
-        "winter"
+        "quick",
+        "summer"
       ]
     },
     {
@@ -331,7 +375,9 @@
     {
       "name": "Gullasch",
       "tags": [
+        "potatoes",
         "beef",
+        "rice",
         "slow",
         "winter"
       ]
@@ -367,15 +413,22 @@
     {
       "name": "Frikadeller",
       "tags": [
+        "cheap",
         "pork",
-        "potatoes"
+        "potatosalat",
+        "potatoes",
+        "quick",
+        "pastasalat"
       ]
     },
     {
       "name": "Krebinetter",
       "tags": [
+        "cheap",
         "pork",
-        "potatoes"
+        "potatoes",
+        "quick",
+        "winter"
       ]
     },
     {
@@ -388,8 +441,10 @@
     {
       "name": "Blomk\u00E5lssuppe",
       "tags": [
+        "cheap",
         "soup",
-        "vegetarian"
+        "vegetarian",
+        "winter"
       ]
     },
     {
@@ -402,16 +457,21 @@
     {
       "name": "Hotdog (fransk)",
       "tags": [
+        "cheap",
         "bread",
+        "bbq",
         "pork",
-        "quick"
+        "quick",
+        "summer"
       ]
     },
     {
       "name": "Fiskebord",
       "tags": [
         "bread",
-        "fish"
+        "fish",
+        "quick",
+        "shellfish"
       ]
     },
     {

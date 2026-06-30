@@ -105,6 +105,7 @@ namespace RecipeEditor
             // 
             // clbTags
             // 
+            clbTags.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             clbTags.CheckOnClick = true;
             clbTags.ColumnWidth = 150;
             clbTags.FormattingEnabled = true;

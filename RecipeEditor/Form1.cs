@@ -1,5 +1,6 @@
 using RecipeEditor.Models;
 using RecipeEditor.Services;
+using System.Linq;
 using static System.Windows.Forms.AxHost;
 
 namespace RecipeEditor;
@@ -30,7 +31,7 @@ public partial class Form1 : Form
 
         lstRecipes.Items.Clear();
 
-        foreach (var recipe in _db.Recipes)
+        foreach (var recipe in _db.Recipes.OrderBy(r => r.Name))
         {
             lstRecipes.Items.Add(recipe.Name);
         }
@@ -41,6 +42,7 @@ public partial class Form1 : Form
             if (index >= 0)
                 lstRecipes.SelectedIndex = index;
         }
+
         UpdateTagChecks();
     }
 
