@@ -1,0 +1,31 @@
+{
+  "version": 1,
+
+  "tags": {
+    "quick": "Hurtig",
+    "cheap": "Billig",
+    "italian": "Italiensk",
+    "pasta": "Pasta",
+    "chicken": "Kylling",
+    "vegetarian": "Vegetar",
+    "spicy": "Stærk"
+  },
+
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Spaghetti Carbonara",
+      "tags": ["italian", "pasta", "quick"]
+    },
+    {
+      "id": 2,
+      "name": "Butter Chicken",
+      "tags": ["chicken", "spicy"]
+    },
+    {
+      "id": 3,
+      "name": "Grøntsagslasagne",
+      "tags": ["vegetarian", "italian"]
+    }
+  ]
+}
