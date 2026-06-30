@@ -1,18 +1,18 @@
 export async function loadRecipes() {
 
     const response = await fetch(
-        `./data/recipes.json?v=${data.version}`
+        `./data/recipes.json?t=${Date.now()}`
     );
 
     if (!response.ok) {
-        throw new Error("Kunne ikke indlæse recipes.json (versioned)");
+        throw new Error("Kunne ikke indlæse recipes.json");
     }
 
-    const finalData = await response.json();
+    const data = await response.json();
 
-    validateData(finalData);
+    validateData(data);
 
-    return finalData;
+    return data;
 }
 
 function validateData(data) {
