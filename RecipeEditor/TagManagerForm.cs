@@ -41,35 +41,6 @@ namespace RecipeEditor
 
             Close();
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            string id = txtTagId.Text.Trim().ToLower();
-            string name = txtDisplayName.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(id) ||
-                string.IsNullOrWhiteSpace(name))
-            {
-                MessageBox.Show("Begge felter skal udfyldes.");
-                return;
-            }
-
-            if (_db.Tags.ContainsKey(id))
-            {
-                MessageBox.Show("Tag ID findes allerede.");
-                return;
-            }
-
-            _db.Tags.Add(id, name);
-
-            RefreshTagList();
-
-            txtTagId.Clear();
-            txtDisplayName.Clear();
-
-            _hasChanges = true;
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             _hasChanges = true;
@@ -86,6 +57,59 @@ namespace RecipeEditor
                     Name = tag.Value
                 });
             }
+        }
+        private void SaveTag()
+        {
+            string id = txtTagId.Text.Trim().ToLower();
+            string name = txtDisplayName.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(name))
+            {
+                MessageBox.Show("Udfyld både ID og navn.");
+                return;
+            }
+
+            // Hvis vi ændrer et eksisterende tag
+            if (lstTags.SelectedItem is TagListItem selected)
+            {
+                // Hvis ID er ændret → vi skal håndtere nøgle-skift
+                if (selected.Id != id)
+                {
+                    if (_db.Tags.ContainsKey(id))
+                    {
+                        MessageBox.Show("Tag ID findes allerede.");
+                        return;
+                    }
+
+                    // flyt værdi
+                    _db.Tags.Remove(selected.Id);
+                    _db.Tags[id] = name;
+                }
+                else
+                {
+                    _db.Tags[id] = name;
+                }
+            }
+            else
+            {
+                // nyt tag
+                if (_db.Tags.ContainsKey(id))
+                {
+                    MessageBox.Show("Tag ID findes allerede.");
+                    return;
+                }
+
+                _db.Tags.Add(id, name);
+            }
+
+            _hasChanges = true;
+
+            RefreshTagList();
+        }
+
+        private void buttonTagSaveEdit_Click(object sender, EventArgs e)
+        {
+            SaveTag();
         }
     }
 }

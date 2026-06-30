@@ -34,9 +34,9 @@
             txtTagId = new TextBox();
             txtDisplayName = new TextBox();
             lblDisplayName = new Label();
-            btnAdd = new Button();
             btnDelete = new Button();
             btnClose = new Button();
+            buttonTagSaveEdit = new Button();
             SuspendLayout();
             // 
             // label1
@@ -55,6 +55,7 @@
             lstTags.Name = "lstTags";
             lstTags.Size = new Size(185, 364);
             lstTags.TabIndex = 1;
+            lstTags.SelectedIndexChanged += lstTags_SelectedIndexChanged;
             // 
             // lblTagId
             // 
@@ -87,16 +88,7 @@
             lblDisplayName.Size = new Size(94, 20);
             lblDisplayName.TabIndex = 4;
             lblDisplayName.Text = "Visningsnavn";
-            // 
-            // btnAdd
-            // 
-            btnAdd.Location = new Point(203, 141);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(193, 29);
-            btnAdd.TabIndex = 6;
-            btnAdd.Text = "Tilføj";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
+            
             // 
             // btnDelete
             // 
@@ -118,14 +110,24 @@
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
+            // buttonTagSaveEdit
+            // 
+            buttonTagSaveEdit.Location = new Point(203, 141);
+            buttonTagSaveEdit.Name = "buttonTagSaveEdit";
+            buttonTagSaveEdit.Size = new Size(90, 29);
+            buttonTagSaveEdit.TabIndex = 9;
+            buttonTagSaveEdit.Text = "Opdater";
+            buttonTagSaveEdit.UseVisualStyleBackColor = true;
+            buttonTagSaveEdit.Click += buttonTagSaveEdit_Click;
+            // 
             // TagManagerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(405, 450);
+            Controls.Add(buttonTagSaveEdit);
             Controls.Add(btnClose);
             Controls.Add(btnDelete);
-            Controls.Add(btnAdd);
             Controls.Add(txtDisplayName);
             Controls.Add(lblDisplayName);
             Controls.Add(txtTagId);
@@ -146,8 +148,8 @@
         private TextBox txtTagId;
         private TextBox txtDisplayName;
         private Label lblDisplayName;
-        private Button btnAdd;
         private Button btnDelete;
         private Button btnClose;
+        private Button buttonTagSaveEdit;
     }
 }
