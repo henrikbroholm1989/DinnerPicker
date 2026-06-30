@@ -12,6 +12,11 @@ export async function loadRecipes() {
 
     validateData(data);
 
+    // Sortér opskrifter alfabetisk efter navn (dansk alfabet)
+    data.recipes.sort((a, b) =>
+    a.name.localeCompare(b.name, "da", { sensitivity: "base" })
+);
+
     return data;
 }
 

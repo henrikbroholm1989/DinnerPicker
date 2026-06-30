@@ -1,5 +1,5 @@
 {
-  "version": 96,
+  "version": 134,
   "tags": {
     "quick": "Hurtig",
     "cheap": "Billig",
@@ -12,7 +12,7 @@
     "noodle": "Nudler",
     "pork": "Gris",
     "bread": "Br\u00F8d",
-    "duck": "And",
+    "duck": "Fjerkr\u00E6",
     "potatoes": "Kartofler",
     "rice": "Ris",
     "pommes": "Pommes Frites",
@@ -20,7 +20,12 @@
     "fish": "Fisk",
     "shellfish": "Skalddyr",
     "soup": "Suppe",
-    "bbq": "Grill"
+    "bbq": "Grill",
+    "slow": "Simreret",
+    "summer": "Sommerret",
+    "winter": "Vinterret",
+    "pastasalat": "Pastasalat",
+    "potatosalat": "Kartoffelsalat"
   },
   "recipes": [
     {
@@ -156,14 +161,14 @@
       ]
     },
     {
-      "name": "Hotdog",
+      "name": "Hotdog (almindelig)",
       "tags": [
         "bread",
         "pork"
       ]
     },
     {
-      "name": "Burger",
+      "name": "Burger (almindelig)",
       "tags": [
         "bread",
         "pork",
@@ -178,7 +183,7 @@
       ]
     },
     {
-      "name": "B\u00F8f",
+      "name": "Steak",
       "tags": [
         "bbq",
         "beef",
@@ -289,6 +294,131 @@
       "tags": [
         "you-and-me",
         "beef"
+      ]
+    },
+    {
+      "name": "Sandwich",
+      "tags": [
+        "bread",
+        "chicken",
+        "summer"
+      ]
+    },
+    {
+      "name": "\u00C6ggekage",
+      "tags": [
+        "pork",
+        "quick",
+        "summer"
+      ]
+    },
+    {
+      "name": "Bagekartofler",
+      "tags": [
+        "pork",
+        "potatoes",
+        "chicken",
+        "winter"
+      ]
+    },
+    {
+      "name": "Stegt fl\u00E6sk",
+      "tags": [
+        "pork",
+        "potatoes"
+      ]
+    },
+    {
+      "name": "Gullasch",
+      "tags": [
+        "beef",
+        "slow",
+        "winter"
+      ]
+    },
+    {
+      "name": "Pasta med laks",
+      "tags": [
+        "fish",
+        "pasta"
+      ]
+    },
+    {
+      "name": "Pasta Penne",
+      "tags": [
+        "pasta"
+      ]
+    },
+    {
+      "name": "Ravioli",
+      "tags": [
+        "pork",
+        "pasta"
+      ]
+    },
+    {
+      "name": "Rugbr\u00F8d",
+      "tags": [
+        "cheap",
+        "bread",
+        "quick"
+      ]
+    },
+    {
+      "name": "Frikadeller",
+      "tags": [
+        "pork",
+        "potatoes"
+      ]
+    },
+    {
+      "name": "Krebinetter",
+      "tags": [
+        "pork",
+        "potatoes"
+      ]
+    },
+    {
+      "name": "Burger (Pulled pork)",
+      "tags": [
+        "bread",
+        "pork"
+      ]
+    },
+    {
+      "name": "Blomk\u00E5lssuppe",
+      "tags": [
+        "soup",
+        "vegetarian"
+      ]
+    },
+    {
+      "name": "Glaseret skinke",
+      "tags": [
+        "pork",
+        "potatoes"
+      ]
+    },
+    {
+      "name": "Hotdog (fransk)",
+      "tags": [
+        "bread",
+        "pork",
+        "quick"
+      ]
+    },
+    {
+      "name": "Fiskebord",
+      "tags": [
+        "bread",
+        "fish"
+      ]
+    },
+    {
+      "name": "Svensk p\u00F8lseret",
+      "tags": [
+        "pork",
+        "potatoes"
       ]
     }
   ]
