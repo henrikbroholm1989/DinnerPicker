@@ -1,20 +1,18 @@
 export function filterRecipes(recipes, selectedTags, mode) {
 
-    if (selectedTags.length === 0)
+    // Ingen filtre valgt → vis alle retter
+    if (selectedTags.size === 0)
         return recipes;
 
-    if (mode === "all") {
+    return recipes.filter(recipe => {
 
-        return recipes.filter(recipe =>
-            selectedTags.every(tag =>
-                recipe.tags.includes(tag)
-            )
-        );
-    }
+        const matches =
+            recipe.tags.filter(tag => selectedTags.has(tag)).length;
 
-    return recipes.filter(recipe =>
-        selectedTags.some(tag =>
-            recipe.tags.includes(tag)
-        )
-    );
+        if (mode === "all") {
+            return matches === selectedTags.size;
+        }
+
+        return matches > 0;
+    });
 }

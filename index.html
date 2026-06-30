@@ -1,74 +1,87 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hvad skal vi have til aftensmad?</title>
+    <title>Aftensmad</title>
 
     <link rel="stylesheet" href="css/styles.css">
 
     <script type="module" src="js/app.js" defer></script>
 </head>
+
 <body>
 
-<header>
-    <h1>🍽 Hvad skal vi have til aftensmad?</h1>
-</header>
+    <main class="container">
 
-<main>
+        <header class="page-header">
 
-    <section id="randomSection">
-        <button id="randomButton">
-            🎲 Vælg tilfældig ret
-        </button>
+            <h1>🍽️ Aftensmad</h1>
 
-        <h2 id="randomRecipe"></h2>
-    </section>
+            <p>Find inspiration til madplanen.</p>
 
-    <section id="filterSection">
+        </header>
 
-        <div class="filterMode">
+        <div class="content">
 
-            <label>
-                <input
-                    type="radio"
-                    name="mode"
-                    value="any"
-                    checked>
+            <aside class="filters">
 
-                Matcher mindst ét tag
-            </label>
+                <section>
 
-            <label>
-                <input
-                    type="radio"
-                    name="mode"
-                    value="all">
+                    <h2>Filtrering</h2>
 
-                Matcher alle tags
-            </label>
+                    <div class="match-mode">
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="mode"
+                                value="all"
+                                checked>
+
+                            Matcher alle tags
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="mode"
+                                value="any">
+
+                            Matcher mindst ét tag
+                        </label>
+
+                    </div>
+
+                    <h2>Tags</h2>
+
+                    <div
+                        id="tagContainer"
+                        class="tag-container">
+                    </div>
+
+                </section>
+
+            </aside>
+
+            <section class="results">
+
+                <div
+                    id="resultInfo"
+                    class="result-info">
+                </div>
+
+                <div
+                    id="recipeContainer"
+                    class="recipe-container">
+                </div>
+
+            </section>
 
         </div>
 
-        <h2>Tags</h2>
-
-        <div id="tagContainer"></div>
-
-    </section>
-
-    <section>
-
-        <h2>
-            Retter
-            (<span id="recipeCount">0</span>)
-        </h2>
-
-        <ul id="recipeList"></ul>
-
-    </section>
-
-</main>
+    </main>
 
 </body>
 </html>

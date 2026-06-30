@@ -1,110 +1,99 @@
 import { loadRecipes } from "./recipes.js";
 import { filterRecipes } from "./filter.js";
-import { pickRandomRecipe } from "./randomizer.js";
+import { getRandomRecipes } from "./randomizer.js";
 
-const state = {
+import {
+    renderTags,
+    renderRecipes,
+    renderResultInfo
+} from "./renderer.js";
 
-    recipes: [],
-    tags: {},
-    selectedTags: [],
-    mode: "any"
+const ui = {
+    tagContainer: document.getElementById("tagContainer"),
+    recipeContainer: document.getElementById("recipeContainer"),
+    resultInfo: document.getElementById("resultInfo")
 };
 
-const tagContainer = document.getElementById("tagContainer");
-const recipeList = document.getElementById("recipeList");
-const recipeCount = document.getElementById("recipeCount");
-const randomRecipe = document.getElementById("randomRecipe");
+const state = {
+    tags: {},
+    recipes: [],
+    selectedTags: new Set(),
+    mode: "all"
+};
 
 init();
 
 async function init() {
 
-    const data = await loadRecipes();
+    try {
 
-    state.recipes = data.recipes;
-    state.tags = data.tags;
+        const data = await loadRecipes();
 
-    renderTags();
-    updateRecipes();
+        state.tags = data.tags;
+        state.recipes = data.recipes;
 
-    document
-        .getElementById("randomButton")
-        .addEventListener("click", randomize);
+        setupEventHandlers();
 
-    document
-        .querySelectorAll("input[name=mode]")
-        .forEach(radio =>
-            radio.addEventListener("change", e => {
+        render();
+    }
+    catch (error) {
 
-                state.mode = e.target.value;
+        console.error(error);
 
-                updateRecipes();
-            }));
-}
-
-function renderTags() {
-
-    for (const [id, name] of Object.entries(state.tags)) {
-
-        const label = document.createElement("label");
-
-        label.className = "tag";
-
-        const checkbox = document.createElement("input");
-
-        checkbox.type = "checkbox";
-
-        checkbox.value = id;
-
-        checkbox.addEventListener("change", () => {
-
-            state.selectedTags =
-                [...tagContainer.querySelectorAll("input:checked")]
-                    .map(c => c.value);
-
-            updateRecipes();
-
-        });
-
-        label.appendChild(checkbox);
-
-        label.append(name);
-
-        tagContainer.appendChild(label);
+        ui.resultInfo.textContent =
+            "Kunne ikke indlæse data.";
     }
 }
 
-function updateRecipes() {
+function setupEventHandlers() {
 
-    const recipes = filterRecipes(
-        state.recipes,
-        state.selectedTags,
-        state.mode
-    );
+    document
+        .querySelectorAll("input[name='mode']")
+        .forEach(radio =>
+            radio.addEventListener("change", event => {
 
-    recipeCount.textContent = recipes.length;
+                state.mode = event.target.value;
 
-    recipeList.innerHTML = "";
-
-    recipes.forEach(recipe => {
-
-        const li = document.createElement("li");
-
-        li.textContent = recipe.name;
-
-        recipeList.appendChild(li);
-
-    });
-
-    state.filteredRecipes = recipes;
+                render();
+            }));
 }
 
-function randomize() {
+function toggleTag(tagId) {
 
-    const recipe = pickRandomRecipe(state.filteredRecipes);
+    if (state.selectedTags.has(tagId))
+        state.selectedTags.delete(tagId);
+    else
+        state.selectedTags.add(tagId);
 
-    randomRecipe.textContent =
-        recipe
-            ? recipe.name
-            : "Ingen ret fundet";
+    render();
+}
+
+function render() {
+
+    const matchingRecipes = filterRecipes(
+        state.recipes,
+        state.selectedTags,
+        state.mode);
+
+    const recipesToShow =
+        state.mode === "any"
+            ? getRandomRecipes(matchingRecipes, 5)
+            : matchingRecipes;
+
+    renderTags(
+        ui.tagContainer,
+        state.tags,
+        state.selectedTags,
+        toggleTag);
+
+    renderRecipes(
+        ui.recipeContainer,
+        recipesToShow,
+        state.tags);
+
+    renderResultInfo(
+        ui.resultInfo,
+        state.mode,
+        matchingRecipes.length,
+        recipesToShow.length);
 }
