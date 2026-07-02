@@ -1,5 +1,5 @@
 {
-  "version": 170,
+  "version": 181,
   "tags": {
     "quick": "Nem",
     "cheap": "Billig",
@@ -66,15 +66,19 @@
       "tags": [
         "cheap",
         "bread",
+        "fish",
         "pork",
+        "you-and-me",
         "chicken",
-        "vegetarian"
+        "quick"
       ]
     },
     {
       "name": "Panini",
       "tags": [
         "bread",
+        "pork",
+        "chicken",
         "quick"
       ]
     },
@@ -204,6 +208,8 @@
       "name": "Skinkesnitzler",
       "tags": [
         "pork",
+        "you-and-me",
+        "potatoes",
         "pommes"
       ]
     },
@@ -218,7 +224,10 @@
     {
       "name": "Oksesteg",
       "tags": [
+        "potatosalat",
+        "potatoes",
         "beef",
+        "pastasalat",
         "pommes"
       ]
     },
@@ -313,16 +322,22 @@
     {
       "name": "P\u00F8lsehorn",
       "tags": [
+        "cheap",
         "bread",
-        "pork"
+        "pork",
+        "you-and-me",
+        "quick"
       ]
     },
     {
       "name": "Pizza",
       "tags": [
+        "cheap",
         "bread",
         "bbq",
-        "pork"
+        "pork",
+        "you-and-me",
+        "quick"
       ]
     },
     {
@@ -343,7 +358,9 @@
       "name": "Sandwich",
       "tags": [
         "bread",
+        "you-and-me",
         "chicken",
+        "quick",
         "summer"
       ]
     },
@@ -386,19 +403,17 @@
       "name": "Pasta med laks",
       "tags": [
         "fish",
-        "pasta"
-      ]
-    },
-    {
-      "name": "Pasta Penne",
-      "tags": [
-        "pasta"
+        "quick",
+        "pasta",
+        "summer"
       ]
     },
     {
       "name": "Ravioli",
       "tags": [
         "pork",
+        "you-and-me",
+        "quick",
         "pasta"
       ]
     },
@@ -407,6 +422,10 @@
       "tags": [
         "cheap",
         "bread",
+        "fish",
+        "pork",
+        "you-and-me",
+        "chicken",
         "quick"
       ]
     },
